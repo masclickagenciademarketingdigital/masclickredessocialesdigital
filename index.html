@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>+CLICK | Marketing Digital Premium</title>
+    <style>
+        :root {
+            --primary: #00e5ff;
+            --accent: #ff00e0;
+            --bg: #050a1a;
+            --font-recoleta: 'Recoleta', serif;
+            --font-avenir: 'Avenir', sans-serif;
+            --font-futura: 'Futura', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: white;
+            font-family: var(--font-avenir);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* 1. ÁREA DE PORTADA (Imagen: portada mas click.png) */
+        #hero {
+            height: 100vh;
+            background: linear-gradient(rgba(5, 10, 26, 0.4), rgba(5, 10, 26, 0.4)), 
+                        url('portada mas click.png') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #hero h1 { font-family: var(--font-recoleta); font-size: 8rem; margin: 0; color: var(--primary); }
+        #hero p { font-family: var(--font-recoleta); font-size: 1.5rem; margin-top: 10px; text-transform: lowercase; }
+
+        /* INTRODUCCIÓN */
+        .intro { padding: 100px 20px; text-align: center; max-width: 900px; margin: 0 auto; }
+        .intro p { font-size: 1.2rem; line-height: 1.8; margin-top: 150px; }
+
+        /* GLOBOS 3D */
+        .packages { display: flex; justify-content: center; gap: 30px; padding: 50px; flex-wrap: wrap; }
+        .globe {
+            width: 150px; padding: 40px; border-radius: 20%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: 0.3s;
+        }
+        .globe:hover { transform: translateY(-20px); box-shadow: 0 20px 40px rgba(0,229,255,0.2); }
+        .globe h2 { font-family: var(--font-recoleta); font-size: 2.5rem; color: var(--primary); }
+        .globe ul { list-style: none; padding: 0; text-align: left; margin: 20px 0; }
+        .globe li { margin: 10px 0; font-size: 0.9rem; }
+        .price { font-family: var(--font-futura); font-size: 1.8rem; font-weight: bold; color: var(--accent); }
+
+        /* ICONOS DE REDES EN PAQUETES */
+        .pkg-socials img { width: 30px; margin: 10px; filter: drop-shadow(0 0 5px var(--primary)); }
+
+        /* OTROS SERVICIOS: Estructura horizontal en globos pequeños */
+.services { 
+    padding: 80px 5%; 
+    text-align: center; 
+}
+
+.services h2 {
+    font-family: var(--font-avenir);
+    font-size: 2rem;
+    margin-bottom: 60px;
+    text-transform: lowercase;
+    color: var(--primary);
+}
+
+.grid { 
+    display: grid; 
+    /* Ajustamos el ancho mínimo para que quepan imagen + texto de lado a lado */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
+}
+
+.item { 
+    display: flex; 
+    flex-direction: row; /* Alineación horizontal */
+    align-items: center; 
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px;
+    border-radius: 12px;
+    transition: 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.item:hover { 
+    background: rgba(0, 229, 255, 0.1);
+    transform: translateX(10px); /* Efecto visual hacia la derecha */
+}
+
+.item img { 
+    width: 50px; /* Tamaño optimizado para vista horizontal */
+    height: 50px; 
+    object-fit: contain; 
+    margin-right: 20px; /* Espacio entre imagen y texto */
+    margin-bottom: 0; /* Eliminamos el margen inferior previo */
+}
+
+.item p { 
+    font-family: var(--font-recoleta); 
+    font-size: 0.85rem; 
+    text-align: left; /* Texto alineado a la izquierda */
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* SECCIÓN REDES SOCIALES */
+.social-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, transparent, rgba(0, 229, 255, 0.02));
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-section h3 {
+    font-family: var(--font-avenir);
+    font-size: 1.4rem;
+    color: var(--primary);
+    text-transform: lowercase;
+    margin-bottom: 35px;
+    letter-spacing: 2px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.social-links a {
+    text-decoration: none;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-links img {
+    width: 60px; /* Tamaño optimizado */
+    height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.2));
+    transition: 0.4s;
+}
+
+.social-links a:hover {
+    transform: scale(1.2) translateY(-10px);
+}
+
+.social-links a:hover img {
+    filter: drop-shadow(0 0 15px var(--primary));
+}
+    
+   </style>
+</head>
+<body>
+
+    <section id="hero">
+        <h1>+CLICK</h1>
+        <p>agencia de marketing digital</p>
+    </section>
+
+    <section class="intro">
+        <p>Nuestra misión en **+CLICK** es liderar la transformación digital con valores de transparencia y excelencia. Nuestra visión es ser el aliado estratégico que catapulta marcas al éxito global mediante innovación constante y creatividad disruptiva.</p>
+    </section>
+
+    <section class="packages">
+        <div class="globe">
+            <h2>Paquete 1</h2>
+            <h3>incluye</h3>
+            <ul>
+                <li>* Manejo de redes sociales</li>
+                <li>* 15 post</li>
+                <li>* 5 reel</li>
+                <li>* Campañas publicitarias</li>
+            </ul>
+            <p class="price">$700.00</p>
+            <div class="pkg-socials">
+                <img src="instagram.png"> <img src="facebook.png">
+            </div>
+        </div>
+
+        <div class="globe">
+            <h2>Paquete 2</h2>
+            <h3>incluye</h3>
+            <ul>
+                <li>* Manejo de redes sociales</li>
+                <li>* 20 post</li>
+                <li>* 5 reels</li>
+                <li>* Visitas c/6 meses</li>
+                <li>* Campañas publicitarias</li>
+            </ul>
+            <p class="price">$1500.00</p>
+            <div class="pkg-socials">
+                <img src="instagram.png"> <img src="facebook.png"> <img src="tiktok.png">
+            </div>
+        </div>
+        <div class="globe">
+            <h2>Paquete 3</h2>
+            <h3>incluye</h3>
+            <ul>
+                <li>* Manejo de redes sociales</li>
+                <li>* 30 post</li>
+                <li>* 15 reels</li>
+                <li>* 15 videos</li>
+                <li>* Campañas publicitarias</li>
+                <li>* Historias todo el mes</li>
+                <li>* Visita para generar nuevo contenido c/3 meses</li>
+                <li>* Chat bot con WhatsApp</li>
+            </ul>
+            <p class="price">$2500.00</p>
+            <div class="pkg-socials">
+                <img src="instagram.png"> <img src="facebook.png"> <img src="tiktok.png">
+            </div>
+        </div>
+
+    <section class="services">
+        <h2>OTROS SERVICIOS</h2>
+        <div class="grid">
+            <div class="item"><img src="curriculumvitae.PNG"><p>CURRICULUM VITAE</p></div>
+            <div class="item"><img src="edicion de fotos.jpg"><p>EDICIÓN DE FOTOS</p></div>
+            <div class="item"><img src="tarjetas de presentación.PNG"><p>TARJETAS DE PRESENTACIÓN</p></div>
+            <div class="item"><img src="logo.PNG"><p>LOGO</p></div>
+            <div class="item"><img src="flayer.PNG"><p>FLAYER</p></div>
+            <div class="item"><img src="gafete.PNG"><p>GAFETE</p></div>
+            <div class="item"><img src="invitaciones.PNG"><p>CURRICULUM VITAE</p></div>
+            <div class="item"><img src="sistematizacion.PNG"><p>SISTEMATIZACIÓN</p></div>
+            <div class="item"><img src="post.PNG"><p>POST</p></div>
+            </div>
+    </section>
+
+<section class="social-section">
+    <h3>siguenos en redes:</h3>
+    <div class="social-links">
+        <a href="https://www.facebook.com/?locale=es_LA" target="_blank" title="Facebook">
+            <img src="facebook.png" alt="Facebook">
+        </a>
+        
+        <a href="https://www.tiktok.com/@masclickags?_r=1&_t=ZS-94" target="_blank" title="TikTok">
+            <img src="tiktok.png" alt="TikTok">
+        </a>
+    </div>
+    <p class="footer-text">&copy; 2024 +CLICK | Todos los derechos reservados.</p>
+    </footer>
+</section>    
+
+        </div>
+    </script>
+</body>
+</html>
