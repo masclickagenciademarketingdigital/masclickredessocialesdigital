@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>+CLICK | Marketing Digital Premium</title>
     <style>
+        /* ============================================= */
+        /* 1. VARIABLES Y ESTILOS BASE */
+        /* ============================================= */
         :root {
-            --primary: #00e5ff;
-            --accent: #ff00e0;
-            --bg: #050a1a;
+            --primary: #00e5ff; /* Cian Neón */
+            --accent: #ff00e0;  /* Magenta Neón */
+            --bg: #050a1a;      /* Fondo Oscuro */
             --font-recoleta: 'Recoleta', serif;
             --font-avenir: 'Avenir', sans-serif;
             --font-futura: 'Futura', sans-serif;
@@ -22,166 +25,172 @@
             overflow-x: hidden;
         }
 
-        /* 1. ÁREA DE PORTADA (Imagen: portada mas click.png) */
+        strong { color: var(--primary); }
+
+        /* ============================================= */
+        /* 2. SECCIÓN HERO (PORTADA) */
+        /* ============================================= */
         #hero {
             height: 100vh;
-            background: linear-gradient(rgba(5, 10, 26, 0.4), rgba(5, 10, 26, 0.4)), 
+            background: linear-gradient(rgba(5, 10, 26, 0.6), rgba(5, 10, 26, 0.6)), 
                         url('portada mas click.png') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding: 0 20px;
         }
 
-        #hero h1 { font-family: var(--font-recoleta); font-size: 8rem; margin: 0; color: var(--primary); }
-        #hero p { font-family: var(--font-recoleta); font-size: 1.5rem; margin-top: 10px; text-transform: lowercase; }
+        #hero h1 { font-family: var(--font-recoleta); font-size: 8rem; margin: 0; color: var(--primary); text-shadow: 0 0 20px rgba(0, 229, 255, 0.7); }
+        #hero p { font-family: var(--font-recoleta); font-size: 1.5rem; margin-top: 10px; text-transform: lowercase; letter-spacing: 2px; }
 
-        /* INTRODUCCIÓN */
-        .intro { padding: 100px 20px; text-align: center; max-width: 900px; margin: 0 auto; }
-        .intro p { font-size: 1.2rem; line-height: 1.8; margin-top: 150px; }
+        /* ============================================= */
+        /* 3. SECCIÓN INTRODUCCIÓN */
+        /* ============================================= */
+        .intro { padding: 120px 20px; text-align: center; max-width: 900px; margin: 0 auto; }
+        .intro p { font-size: 1.3rem; line-height: 1.8; margin-top: 0; }
 
-        /* GLOBOS 3D */
-        .packages { display: flex; justify-content: center; gap: 30px; padding: 50px; flex-wrap: wrap; }
+        /* ============================================= */
+        /* 4. SECCIÓN PAQUETES (GLOBOS 3D) */
+        /* ============================================= */
+        .packages { display: flex; justify-content: center; gap: 40px; padding: 80px 20px; flex-wrap: wrap; }
+        
         .globe {
-            width: 150px; padding: 40px; border-radius: 20%;
-            background: rgba(255, 255, 255, 0.05);
+            width: 300px; padding: 40px; border-radius: 20px;
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             text-align: center;
-            transition: 0.3s;
+            transition: all 0.4s ease;
+            display: flex; flex-direction: column; justify-content: space-between;
         }
-        .globe:hover { transform: translateY(-20px); box-shadow: 0 20px 40px rgba(0,229,255,0.2); }
-        .globe h2 { font-family: var(--font-recoleta); font-size: 2.5rem; color: var(--primary); }
-        .globe ul { list-style: none; padding: 0; text-align: left; margin: 20px 0; }
-        .globe li { margin: 10px 0; font-size: 0.9rem; }
-        .price { font-family: var(--font-futura); font-size: 1.8rem; font-weight: bold; color: var(--accent); }
+        
+        .globe:hover { transform: translateY(-15px); box-shadow: 0 15px 35px rgba(0, 229, 255, 0.2); background: rgba(255, 255, 255, 0.05); }
+        
+        .globe-content h2 { font-family: var(--font-recoleta); font-size: 2.2rem; color: var(--primary); margin: 0; }
+        .globe-content h3 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7; margin-top: 5px; }
+        
+        .globe ul { list-style: none; padding: 0; text-align: left; margin: 30px 0; flex-grow: 1; }
+        .globe li { margin: 12px 0; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px; }
+        
+        .price { font-family: var(--font-futura); font-size: 2rem; font-weight: bold; color: var(--accent); margin-top: auto; }
+        .pkg-socials { margin-top: 15px; }
+        .pkg-socials img { width: 25px; margin: 0 8px; filter: drop-shadow(0 0 5px var(--primary)); }
 
-        /* ICONOS DE REDES EN PAQUETES */
-        .pkg-socials img { width: 30px; margin: 10px; filter: drop-shadow(0 0 5px var(--primary)); }
+        /* ============================================= */
+        /* 5. SECCIÓN OTROS SERVICIOS */
+        /* ============================================= */
+        .services { padding: 100px 5%; text-align: center; background: rgba(0,0,0,0.2); }
+        .services h2 { font-family: var(--font-avenir); font-size: 2.2rem; margin-bottom: 80px; text-transform: lowercase; color: var(--primary); letter-spacing: 3px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        
+        .item { 
+            display: flex; flex-direction: row; align-items: center; 
+            background: rgba(255, 255, 255, 0.02); padding: 20px; border-radius: 15px; 
+            transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .item:hover { background: rgba(0, 229, 255, 0.08); transform: translateX(10px); border-color: rgba(0, 229, 255, 0.2); }
+        .item img { width: 55px; height: 55px; object-fit: contain; margin-right: 25px; }
+        .item p { font-family: var(--font-recoleta); font-size: 0.9rem; text-align: left; margin: 0; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.9); }
 
-        /* OTROS SERVICIOS: Estructura horizontal en globos pequeños */
-.services { 
-    padding: 80px 5%; 
-    text-align: center; 
-}
+        /* ============================================= */
+        /* 6. SECCIÓN REDES SOCIALES (PIE DE PÁGINA) */
+        /* ============================================= */
+        .social-section {
+            padding: 100px 20px; text-align: center;
+            background: linear-gradient(to bottom, transparent, rgba(0, 229, 255, 0.03));
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .social-section h3 { font-family: var(--font-avenir); font-size: 1.5rem; color: var(--primary); text-transform: lowercase; margin-bottom: 40px; letter-spacing: 2px; }
+        .social-links { display: flex; justify-content: center; gap: 60px; margin-bottom: 40px; }
+        .social-links img { width: 65px; height: 65px; transition: all 0.4s ease; filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.2)); }
+        .social-links a:hover img { transform: scale(1.15) translateY(-10px); filter: drop-shadow(0 0 20px var(--primary)); }
+        .footer-text { font-size: 0.85rem; opacity: 0.6; margin: 0; }
 
-.services h2 {
-    font-family: var(--font-avenir);
-    font-size: 2rem;
-    margin-bottom: 60px;
-    text-transform: lowercase;
-    color: var(--primary);
-}
+        /* ============================================= */
+        /* 7. ESTILOS DEL CHATBOT AI FLOTANTE */
+        /* ============================================= */
+        #ai-chat-container {
+            position: fixed; bottom: 30px; right: 30px; z-index: 1000; font-family: var(--font-avenir);
+        }
 
-.grid { 
-    display: grid; 
-    /* Ajustamos el ancho mínimo para que quepan imagen + texto de lado a lado */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 30px; 
-}
+        /* Imagen circular flotante */
+        .ai-bot-launcher {
+            width: 110px; height: 110px; border-radius: 50%; background-color: #0c1221;
+            border: 3px solid var(--primary); box-shadow: 0 0 25px rgba(0, 229, 255, 0.5);
+            cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden;
+            display: flex; justify-content: center; align-items: center;
+            animation: ai-float 4s infinite ease-in-out;
+        }
+        .ai-bot-launcher:hover { transform: scale(1.05); box-shadow: 0 0 35px var(--primary); }
+        .ai-bot-launcher img { width: 90%; height: 90%; object-fit: cover; border-radius: 50%; }
 
-.item { 
-    display: flex; 
-    flex-direction: row; /* Alineación horizontal */
-    align-items: center; 
-    background: rgba(255, 255, 255, 0.03);
-    padding: 15px;
-    border-radius: 12px;
-    transition: 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
+        @keyframes ai-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
 
-.item:hover { 
-    background: rgba(0, 229, 255, 0.1);
-    transform: translateX(10px); /* Efecto visual hacia la derecha */
-}
+        /* Ventana del formulario de chat */
+        .ai-chat-window {
+            display: none; position: absolute; bottom: 130px; right: 0; width: 320px;
+            background: rgba(10, 18, 38, 0.98); backdrop-filter: blur(15px);
+            border-radius: 20px; border: 1px solid var(--primary);
+            box-shadow: 0 10px 50px rgba(0,0,0,0.6); overflow: hidden;
+            transition: all 0.3s ease; opacity: 0; transform: translateY(20px);
+        }
+        .ai-chat-window.open { display: block; opacity: 1; transform: translateY(0); }
 
-.item img { 
-    width: 50px; /* Tamaño optimizado para vista horizontal */
-    height: 50px; 
-    object-fit: contain; 
-    margin-right: 20px; /* Espacio entre imagen y texto */
-    margin-bottom: 0; /* Eliminamos el margen inferior previo */
-}
+        .ai-chat-header {
+            background: linear-gradient(135deg, #0f1830, #16264d); padding: 15px 20px;
+            border-bottom: 1px solid rgba(0, 229, 255, 0.2); display: flex; align-items: center; justify-content: space-between;
+        }
+        .ai-chat-header h4 { margin: 0; font-family: var(--font-recoleta); color: var(--primary); font-size: 1.2rem; }
+        .ai-chat-close { color: white; font-size: 1.8rem; cursor: pointer; opacity: 0.6; transition: 0.3s; line-height: 1; }
+        .ai-chat-close:hover { opacity: 1; color: var(--accent); }
 
-.item p { 
-    font-family: var(--font-recoleta); 
-    font-size: 0.85rem; 
-    text-align: left; /* Texto alineado a la izquierda */
-    margin: 0;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
+        .ai-chat-body { padding: 25px; }
+        .ai-chat-body p { font-size: 0.9rem; color: rgba(255,255,255,0.8); margin-top: 0; margin-bottom: 20px; line-height: 1.5; }
 
-/* SECCIÓN REDES SOCIALES */
-.social-section {
-    padding: 80px 20px;
-    text-align: center;
-    background: linear-gradient(to bottom, transparent, rgba(0, 229, 255, 0.02));
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
+        .ai-form-group { margin-bottom: 18px; }
+        .ai-form-group label { display: block; font-size: 0.8rem; color: var(--primary); margin-bottom: 6px; text-transform: lowercase; letter-spacing: 1px; }
+        
+        .ai-chat-input, .ai-chat-select {
+            width: 100%; padding: 12px; background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(0, 229, 255, 0.2); border-radius: 8px;
+            color: white; font-family: var(--font-avenir); font-size: 0.9rem; box-sizing: border-box;
+        }
+        .ai-chat-input:focus, .ai-chat-select:focus { outline: none; border-color: var(--primary); background: rgba(0, 229, 255, 0.08); }
 
-.social-section h3 {
-    font-family: var(--font-avenir);
-    font-size: 1.4rem;
-    color: var(--primary);
-    text-transform: lowercase;
-    margin-bottom: 35px;
-    letter-spacing: 2px;
-}
+        /* Botón de enviar (estilo WhatsApp) */
+        .ai-chat-submit {
+            width: 100%; padding: 16px; background-color: #25d366; color: white;
+            border: none; border-radius: 8px; font-weight: bold; font-size: 1rem;
+            cursor: pointer; transition: 0.3s; display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 25px;
+        }
+        .ai-chat-submit:hover { background-color: #1ebe57; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); }
 
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-}
-
-.social-links a {
-    text-decoration: none;
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.social-links img {
-    width: 60px; /* Tamaño optimizado */
-    height: 60px;
-    object-fit: contain;
-    filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.2));
-    transition: 0.4s;
-}
-
-.social-links a:hover {
-    transform: scale(1.2) translateY(-10px);
-}
-
-.social-links a:hover img {
-    filter: drop-shadow(0 0 15px var(--primary));
-}
-    
-   </style>
+        /* ============================================= */
+        /* 8. MEDIA QUERIES (RESPONSIVO) */
+        /* ============================================= */
+        @media (max-width: 768px) {
+            #hero h1 { font-size: 4rem; }
+            #hero p { font-size: 1.1rem; }
+            .intro { padding: 80px 20px; }
+            .intro p { font-size: 1.1rem; }
+            .globe { width: 100%; max-width: 320px; }
+            .services h2 { font-size: 1.8rem; }
+            .grid { grid-template-columns: 1fr; }
+            .social-links { gap: 30px; }
+            .social-links img { width: 50px; height: 50px; }
+            #ai-chat-container { right: 15px; bottom: 15px; }
+            .ai-bot-launcher { width: 80px; height: 80px; }
+            .ai-chat-window { width: 290px; right: 0; bottom: 100px; }
+        }
+    </style>
 </head>
 <body>
-
-<script>
-  window.addEventListener('mouseover', initLandbot, { once: true });
-  window.addEventListener('touchstart', initLandbot, { once: true });
-  var myLandbot;
-  function initLandbot() {
-    if (!myLandbot) {
-      var s = document.createElement('script');
-      s.type = "module"
-      s.async = true;
-      s.addEventListener('load', function() {
-        var myLandbot = new Landbot.Livechat({
-          configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-3374791-BS6MX2VUODUXL1C7/index.json',
-        });
-      });
-      s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs';
-      var x = document.getElementsByTagName('script')[0];
-      x.parentNode.insertBefore(s, x);
-    }
-  }
-</script>    
 
     <section id="hero">
         <h1>+CLICK</h1>
@@ -189,90 +198,189 @@
     </section>
 
     <section class="intro">
-        <p>Nuestra misión en **+CLICK** es liderar la transformación digital con valores de transparencia y excelencia. Nuestra visión es ser el aliado estratégico que catapulta marcas al éxito global mediante innovación constante y creatividad disruptiva.</p>
+        <p>Nuestra misión en <strong>+CLICK</strong> es liderar la transformación digital con valores de transparencia y excelencia. Nuestra visión es ser el aliado estratégico que catapulta marcas al éxito global mediante innovación constante y creatividad disruptiva.</p>
     </section>
 
     <section class="packages">
         <div class="globe">
-            <h2>Paquete 1</h2>
-            <h3>incluye</h3>
-            <ul>
-                <li>* Manejo de redes sociales</li>
-                <li>* 15 post</li>
-                <li>* 5 reel</li>
-                <li>* Campañas publicitarias</li>
-            </ul>
-            <p class="price">$700.00</p>
-            <div class="pkg-socials">
-                <img src="instagram.png"> <img src="facebook.png">
+            <div class="globe-content">
+                <h2>Paquete 1</h2>
+                <h3>incluye</h3>
+                <ul>
+                    <li>• Manejo de redes sociales</li>
+                    <li>• 15 publicaciones</li>
+                    <li>• 5 reels</li>
+                    <li>• Campañas publicitarias</li>
+                </ul>
+            </div>
+            <div class="globe-footer">
+                <p class="price">$700.00</p>
+                <div class="pkg-socials">
+                    <img src="Instagram.png" alt="Instagram"> <img src="facebook.png" alt="Facebook">
+                </div>
             </div>
         </div>
 
         <div class="globe">
-            <h2>Paquete 2</h2>
-            <h3>incluye</h3>
-            <ul>
-                <li>* Manejo de redes sociales</li>
-                <li>* 20 post</li>
-                <li>* 5 reels</li>
-                <li>* Visitas c/6 meses</li>
-                <li>* Campañas publicitarias</li>
-            </ul>
-            <p class="price">$1500.00</p>
-            <div class="pkg-socials">
-                <img src="instagram.png"> <img src="facebook.png"> <img src="tiktok.png">
+            <div class="globe-content">
+                <h2>Paquete 2</h2>
+                <h3>incluye</h3>
+                <ul>
+                    <li>• Manejo de redes sociales</li>
+                    <li>• 20 publicaciones</li>
+                    <li>• 5 reels</li>
+                    <li>• Visitas cada 6 meses</li>
+                    <li>• Campañas publicitarias</li>
+                </ul>
+            </div>
+            <div class="globe-footer">
+                <p class="price">$1,500.00</p>
+                <div class="pkg-socials">
+                    <img src="Instagram.png" alt="Instagram"> <img src="facebook.png" alt="Facebook"> <img src="tiktok.png" alt="TikTok">
+                </div>
             </div>
         </div>
+
         <div class="globe">
-            <h2>Paquete 3</h2>
-            <h3>incluye</h3>
-            <ul>
-                <li>* Manejo de redes sociales</li>
-                <li>* 30 post</li>
-                <li>* 15 reels</li>
-                <li>* 15 videos</li>
-                <li>* Campañas publicitarias</li>
-                <li>* Historias todo el mes</li>
-                <li>* Visita para generar nuevo contenido c/3 meses</li>
-                <li>* Chat bot con WhatsApp</li>
-            </ul>
-            <p class="price">$2500.00</p>
-            <div class="pkg-socials">
-                <img src="instagram.png"> <img src="facebook.png"> <img src="tiktok.png">
+            <div class="globe-content">
+                <h2>Paquete 3</h2>
+                <h3>incluye</h3>
+                <ul>
+                    <li>• Manejo de redes sociales</li>
+                    <li>• 30 publicaciones</li>
+                    <li>• 15 reels y 15 videos</li>
+                    <li>• Historias todo el mes</li>
+                    <li>• Campañas publicitarias</li>
+                    <li>• Contenido nuevo (cada 3 meses)</li>
+                    <li>• Chatbot con WhatsApp</li>
+                </ul>
+            </div>
+            <div class="globe-footer">
+                <p class="price">$2,500.00</p>
+                <div class="pkg-socials">
+                    <img src="Instagram.png" alt="Instagram"> <img src="facebook.png" alt="Facebook"> <img src="tiktok.png" alt="TikTok">
+                </div>
             </div>
         </div>
+    </section>
 
     <section class="services">
         <h2>OTROS SERVICIOS</h2>
         <div class="grid">
-            <div class="item"><img src="curriculumvitae.PNG"><p>CURRICULUM VITAE</p></div>
-            <div class="item"><img src="edicion de fotos.jpg"><p>EDICIÓN DE FOTOS</p></div>
-            <div class="item"><img src="tarjetas de presentación.PNG"><p>TARJETAS DE PRESENTACIÓN</p></div>
-            <div class="item"><img src="logo.PNG"><p>LOGO</p></div>
-            <div class="item"><img src="flayer.PNG"><p>FLAYER</p></div>
-            <div class="item"><img src="gafete.PNG"><p>GAFETE</p></div>
-            <div class="item"><img src="invitaciones.PNG"><p>CURRICULUM VITAE</p></div>
-            <div class="item"><img src="sistematizacion.PNG"><p>SISTEMATIZACIÓN</p></div>
-            <div class="item"><img src="post.PNG"><p>POST</p></div>
-            </div>
+            <div class="item"><img src="curriculumvitae.PNG" alt="CV"><p>CURRÍCULUM VITAE</p></div>
+            <div class="item"><img src="edicion de fotos.jpg" alt="Edición"><p>EDICIÓN DE FOTOS</p></div>
+            <div class="item"><img src="tarjetas de presentación.PNG" alt="Tarjetas"><p>TARJETAS DE PRESENTACIÓN</p></div>
+            <div class="item"><img src="logo.PNG" alt="Logo"><p>DISEÑO DE LOGOTIPO</p></div>
+            <div class="item"><img src="flayer.PNG" alt="Flyer"><p>FLYER</p></div>
+            <div class="item"><img src="gafete.PNG" alt="Gafete"><p>GAFETE</p></div>
+            <div class="item"><img src="invitaciones.PNG" alt="Invitaciones"><p>INVITACIONES</p></div>
+            <div class="item"><img src="sistematizacion.PNG" alt="Sistematización"><p>SISTEMATIZACIÓN</p></div>
+            <div class="item"><img src="post.PNG" alt="Post"><p>POST INDIVIDUAL</p></div>
+        </div>
     </section>
 
-<section class="social-section">
-    <h3>siguenos en redes:</h3>
-    <div class="social-links">
-        <a href="https://www.facebook.com/?locale=es_LA" target="_blank" title="Facebook">
-            <img src="facebook.png" alt="Facebook">
-        </a>
-        
-        <a href="https://www.tiktok.com/@masclickags?_r=1&_t=ZS-94" target="_blank" title="TikTok">
-            <img src="tiktok.png" alt="TikTok">
-        </a>
-    </div>
-    <p class="footer-text">&copy; 2024 +CLICK | Todos los derechos reservados.</p>
-    </footer>
-</section>    
-
+    <section class="social-section">
+        <h3>síguenos en redes:</h3>
+        <div class="social-links">
+            <a href="https://www.facebook.com/?locale=es_LA" target="_blank">
+                <img src="facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.tiktok.com/@masclickags?_r=1&_t=ZS-94" target="_blank">
+                <img src="tiktok.png" alt="TikTok">
+            </a>
         </div>
+        <p class="footer-text">&copy; 2024 +CLICK | Todos los derechos reservados.</p>
+    </section>
+
+    <div id="ai-chat-container">
+        <div class="ai-chat-window" id="aiChatWindow">
+            <div class="ai-chat-header">
+                <h4>Asistente AI +CLICK</h4>
+                <span class="ai-chat-close" onclick="toggleAIChat()">&times;</span>
+            </div>
+            <div class="ai-chat-body">
+                <p>¡Hola! Soy tu asistente virtual. Para ayudarte mejor, por favor llena este pequeño cuestionario y nos pondremos en contacto contigo vía WhatsApp.</p>
+                
+                <div class="ai-form-group">
+                    <label>¿Cuál es tu nombre?</label>
+                    <input type="text" id="aiName" class="ai-chat-input" placeholder="Tu nombre completo">
+                </div>
+
+                <div class="ai-form-group">
+                    <label>¿Qué paquete te interesa?</label>
+                    <select id="aiPackage" class="ai-chat-select">
+                        <option value="" disabled selected>Selecciona un paquete</option>
+                        <option value="Paquete 1 ($700)">Paquete 1 ($700)</option>
+                        <option value="Paquete 2 ($1500)">Paquete 2 ($1500)</option>
+                        <option value="Paquete 3 ($2500)">Paquete 3 ($2500)</option>
+                        <option value="Otros Servicios">Otros Servicios</option>
+                    </select>
+                </div>
+
+                <div class="ai-form-group">
+                    <label>¿Cuál es tu número de teléfono?</label>
+                    <input type="tel" id="aiPhone" class="ai-chat-input" placeholder="Ej: 449 123 4567">
+                </div>
+
+                <div class="ai-form-group">
+                    <label>¿En qué horario gustas que nos contactemos?</label>
+                    <input type="text" id="aiSchedule" class="ai-chat-input" placeholder="Ej: Lunes a Viernes, 9am - 6pm">
+                </div>
+
+                <button class="ai-chat-submit" onclick="sendAiWhatsApp()">
+                    <img src="whatsapp.png" alt="" style="width:20px; height:20px;">
+                    Enviar a WhatsApp
+                </button>
+            </div>
+        </div>
+
+        <div class="ai-bot-launcher" onclick="toggleAIChat()">
+            <img src="CHATBOT2.jpg" alt="AI Assistant">
+        </div>
+    </div>
+
+    <script>
+        // Función para abrir/cerrar la ventana del chat
+        function toggleAIChat() {
+            const chatWindow = document.getElementById('aiChatWindow');
+            chatWindow.classList.toggle('open');
+        }
+
+        // Función para enviar los datos a WhatsApp
+        function sendAiWhatsApp() {
+            // -------------------------------------------------------------------------
+            // 1. CONFIGURA TU NÚMERO DE WHATSAPP AQUÍ
+            // (Con código de país, sin '+' ni espacios. Ej para México: 52...)
+            const myWhatsAppNumber = "524494653160"; 
+            // -------------------------------------------------------------------------
+
+            // 2. Obtener los valores del formulario
+            const name = document.getElementById('aiName').value.trim();
+            const pkg = document.getElementById('aiPackage').value;
+            const phone = document.getElementById('aiPhone').value.trim();
+            const schedule = document.getElementById('aiSchedule').value.trim();
+
+            // 3. Validación básica
+            if (name === "" || pkg === "" || phone === "" || schedule === "") {
+                alert("Por favor, completa todos los campos del cuestionario antes de enviar.");
+                return;
+            }
+
+            // 4. Crear el mensaje codificado
+            const mensaje = `¡Hola +CLICK! 👋%0A%0AMe interesa recibir información. Aquí tienes mis datos:%0A%0A` +
+                            `*Nombre:* ${name}%0A` +
+                            `*Paquete de interés:* ${pkg}%0A` +
+                            `*Teléfono:* ${phone}%0A` +
+                            `*Horario de contacto:* ${schedule}`;
+
+            // 5. Abrir WhatsApp
+            const whatsappUrl = `https://wa.me/${myWhatsAppNumber}?text=${mensaje}`;
+            window.open(whatsappUrl, '_blank');
+            
+            // Cerrar el chat
+            toggleAIChat();
+        }
     </script>
+
 </body>
 </html>
